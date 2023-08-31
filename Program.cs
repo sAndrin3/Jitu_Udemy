@@ -1,6 +1,7 @@
 using Jitu_udemy.Services.Iservices;
 using Jitu_Udemy.Data;
 using Jitu_Udemy.Services;
+using Jitu_Udemy.Services.Iservices;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -18,6 +19,8 @@ builder.Services.AddDbContext<ApplicationDbContext>(options => {
 
 // Register Service ----Dependancy Injection
 builder.Services.AddScoped<IUserService, UserService>();
+builder.Services.AddScoped<IInstructorService, InstructorService>();
+builder.Services.AddScoped<ICourseService, CourseService>();
 
 // AutoMapper
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
