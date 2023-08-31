@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="../build/Jitu Udemy.props" />
+</Project>
