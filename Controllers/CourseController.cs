@@ -54,7 +54,7 @@ namespace Jitu_udemy.Controllers{
         }
 
         [HttpPut("{id}")]
-        public async Task<ActionResult<CourseSuccess>> UpdateCourse(Guid id, AddCourse UpdatedCourse)
+        public async Task<ActionResult<CourseSuccess>> UpdateCourse(Guid id, UpdateCourse UpdatedCourse)
         {
             var response = await _courseService.GetCourseByIdAsync(id);
             if (response == null)

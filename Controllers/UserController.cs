@@ -60,6 +60,22 @@ namespace Jitu_Udemy.Controllers{
 
         }
 
+         [HttpPut("BuyCourse")]
+        public async Task<ActionResult<UserSuccess>> buyCourse( BuyCourse buy)
+        {
+           try
+           {
+            var res = await _userService.BuyCourse(buy);
+            return Ok(new UserSuccess(204, res));
+           }
+           catch (Exception ex)
+           {
+                return BadRequest(new UserSuccess(400, ex.Message));
+           }
+            
+
+        }
+
          [HttpDelete("{id}")]
         public async Task<ActionResult<UserSuccess>> DeleteUser(Guid id)
         {
